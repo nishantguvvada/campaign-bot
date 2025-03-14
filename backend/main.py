@@ -4,8 +4,6 @@ from pydantic import BaseModel
 from tool import get_product_details, get_duration
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.prompts.chat import MessagesPlaceholder
 from langgraph.prebuilt import create_react_agent
 from fastapi.middleware.cors import CORSMiddleware
 import os

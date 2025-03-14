@@ -2,14 +2,12 @@
 import { useState } from "react";
 import toast from 'react-hot-toast';
 import axios from "axios";
-import { useRouter } from 'next/navigation'
 import ReactMarkdown from "react-markdown";
 
 export const ChatInterface = () => {
     const [userQuery, setUserQuery] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [output, setOutput] = useState("");
-    const router = useRouter();
 
     const handleUserQuery = async () => {
         setIsLoading(true);
@@ -28,7 +26,6 @@ export const ChatInterface = () => {
             setIsLoading(false);
             toast.success("Campaign initiated!")
             setOutput(response.data.response["content"])
-            router.push(response.data.response["content"]);
             
         } catch(err) {
             console.log(err)
